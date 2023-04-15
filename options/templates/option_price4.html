@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Black Scholes Method of Option Pricing</title>
+    </head>
+    <body>
+        <h1>Black Scholes Method of Option Pricing</h1><br>
+
+        <form action="../result/" method="get">
+            Spot Price: <input type="number" required= "required" step = "any" name="spot_price"><br>
+            Strike Price: <input type="number" required= "required" step = "any" name="strike_price"><br>
+            Volatility: <input type="number" required= "required" step = "any" name="volatility"><br>
+            Risk-Free Rate: <input type="number" required= "required" step = "any" name="risk_free_rate">(in percentage)<br>
+            Time to Maturity: <input type="number" required= "required" step = "any" name="time_to_maturity"><br>
+            <select name="option">
+                <option value="call" >Call Option</option>
+                <option value="put" >Put Option</option>
+            </select><br>
+            <input type="submit" value="Calculate Option Price">    
+            
+        </form>
+        
+        {% if call_option_value %}
+        <p>Call Option price: {{ call_option_value }}</p>
+        {% endif %}
+        {% if put_option_value %}
+        <p>Put Option price: {{ put_option_value }}</p>
+        {% endif %}
+        <a href = "/">Go Back to homepage</a>
